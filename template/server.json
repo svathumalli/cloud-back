@@ -16,19 +16,19 @@
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2022-03-01",
-            "name": "aps_cloud_sai_name",
+            "name": "[parameters('sites_aps_cloud_svathumalli_name')]",
             "location": "Central US",
             "kind": "app",
             "properties": {
                 "enabled": true,
                 "hostNameSslStates": [
                     {
-                        "name": "[concat(parameters('sites_aps_cloud_sai_name'), '.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "hostType": "Standard"
                     },
                     {
-                        "name": "[concat(parameters('sites_aps_cloud_sai_name'), '.scm.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '.scm.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "hostType": "Repository"
                     }
@@ -65,10 +65,10 @@
         {
             "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
             "apiVersion": "2022-03-01",
-            "name": "[concat(parameters('sites_aps_cloud_sai_name'), '/ftp')]",
+            "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '/ftp')]",
             "location": "Central US",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_sai_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_svathumalli_name'))]"
             ],
             "properties": {
                 "allow": true
@@ -77,10 +77,10 @@
         {
             "type": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
             "apiVersion": "2022-03-01",
-            "name": "[concat(parameters('sites_aps_cloud_sai_name'), '/scm')]",
+            "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '/scm')]",
             "location": "Central US",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_sai_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_svathumalli_name'))]"
             ],
             "properties": {
                 "allow": true
@@ -89,10 +89,10 @@
         {
             "type": "Microsoft.Web/sites/config",
             "apiVersion": "2022-03-01",
-            "name": "[concat(parameters('sites_aps_cloud_sai_name'), '/web')]",
+            "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '/web')]",
             "location": "Central US",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_sai_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_svathumalli_name'))]"
             ],
             "properties": {
                 "numberOfWorkers": 1,
@@ -114,7 +114,7 @@
                 "acrUseManagedIdentityCreds": false,
                 "logsDirectorySizeLimit": 35,
                 "detailedErrorLoggingEnabled": false,
-                "publishingUsername": "$aps-cloud-sai",
+                "publishingUsername": "$aps-cloud-svathumalli",
                 "scmType": "GitHubAction",
                 "use32BitWorkerProcess": true,
                 "webSocketsEnabled": false,
@@ -167,13 +167,13 @@
         {
             "type": "Microsoft.Web/sites/hostNameBindings",
             "apiVersion": "2022-03-01",
-            "name": "[concat(parameters('sites_aps_cloud_sai_name'), '/', parameters('sites_aps_cloud_sai_name'), '.azurewebsites.net')]",
+            "name": "[concat(parameters('sites_aps_cloud_svathumalli_name'), '/', parameters('sites_aps_cloud_svathumalli_name'), '.azurewebsites.net')]",
             "location": "Central US",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_sai_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_aps_cloud_svathumalli_name'))]"
             ],
             "properties": {
-                "siteName": "aps-cloud-sai",
+                "siteName": "aps-cloud-svathumalli",
                 "hostNameType": "Verified"
             }
         }
