@@ -18,4 +18,4 @@ jobs:
         with:
           subscriptionId: 36094c3e-09a9-4d87-b2f6-8155155e2916
           resourceGroupName: rg-cloud-svathumalli
-          template: ./template/server.json
+          template: ./template/sql.json
