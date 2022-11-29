@@ -16,7 +16,7 @@
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2022-03-01",
-            "name": "[parameters('sites_aps_cloud_sai_name')]",
+            "name": "aps_cloud_sai_name",
             "location": "Central US",
             "kind": "app",
             "properties": {
